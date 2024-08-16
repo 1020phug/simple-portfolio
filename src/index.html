@@ -10,7 +10,7 @@
 		/>
 		<link rel="stylesheet" href="assets/UI/css/all.min.css" />
 		<link rel="stylesheet" href="output.css" />
-		<title>My Portfolio || 1020dev</title>
+		<title>My Portfolio || 1020phug</title>
 	</head>
 	<body class="min-h-full">
 		<header
@@ -20,33 +20,109 @@
 				<img src="assets/images/logo.png" alt="" class="w-full" />
 			</div>
 			<h1 class="text-3xl font-bold max-sm:hidden">My Portfolio</h1>
-			<main class="">
-				<ul class="flex w-full items-center gap-8">
+			<nav>
+				<span class="cursor-pointer" hidden onclick="toggleMenu()"
+					><i class="fa-solid fa-bars"></i
+				></span>
+				<ul class="flex w-full items-center gap-8 max-lg:hidden">
 					<li>
-						<a href="https://github.com/1020dev" target="_blank" rel="noopener">
+						<a
+							href="https://github.com/1020phug"
+							target="_blank"
+							rel="noopener"
+							class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-slate-300 hover:text-slate-800 transition-all duration-200"
+						>
 							<i class="fa-brands fa-github"></i>
 						</a>
 					</li>
 					<li>
-						<a href="#user" target="_blank" rel="noopener">
+						<a
+							href="#user"
+							target="_blank"
+							rel="noopener"
+							class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-slate-300 hover:text-slate-800 transition-all duration-200"
+						>
 							<i class="fa-solid fa-user"></i>
 						</a>
 					</li>
 					<li>
-						<a href="#projects" target="_blank" rel="noopener">
+						<a
+							href="#projects"
+							target="_blank"
+							rel="noopener"
+							class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-slate-300 hover:text-slate-800 transition-all duration-200"
+						>
 							<i class="fa-solid fa-diagram-project"></i>
 						</a>
 					</li>
 				</ul>
-			</main>
+			</nav>
 		</header>
 		<main id="hero" class="bg-slate-50 min-h-screen">
-			<div class="w-full min-w-4/5 h-64 mt-16 md:px-8">
-				<img
-					src="assets/images/cover.jpg"
-					alt=""
-					class="object-cover object-center h-full w-full"
-				/>
+			<div class="bg-slate-200">
+				<div class="max-w-7xl mx-auto h-64 mt-[4rem] md:px-8">
+					<img
+						src="assets/images/cover.jpg"
+						alt=""
+						class="object-cover object-center h-full w-full"
+					/>
+				</div>
+				<div
+					class="max-w-7xl mx-auto px-16 flex flex-col items-center gap-6 lg:flex-row translate-y-[-15%]"
+				>
+					<img
+						src="assets/images/avt.jpg"
+						alt=""
+						class="border-4 border-spacing-2 border-slate-300 w-40 rounded-full"
+					/>
+					<div
+						class="flex flex-col gap-2 max-lg:items-center justify-center translate-y-4"
+					>
+						<h1 class="text-3xl md:text-4xl">Phung Quang Anh</h1>
+						<p class="text-base opacity-70">Web Developer</p>
+						<ul class="flex gap-2">
+							<li
+								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-orange-600 hover:border-orange-600 transition-all"
+							>
+								<i class="fa-brands fa-html5"></i>
+							</li>
+							<li
+								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-blue-400 hover:border-blue-400 transition-all shadow-lg hover:shadow-xl"
+							>
+								<i class="fa-brands fa-css3-alt"></i>
+							</li>
+							<li
+								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-yellow-400 hover:border-yellow-400 transition-all shadow-lg hover:shadow-xl"
+							>
+								<i class="fa-brands fa-js"></i>
+							</li>
+							<li
+								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-sky-400 hover:border-sky-400 transition-all shadow-lg hover:shadow-xl"
+							>
+								<i class="fa-brands fa-react"></i>
+							</li>
+							<li
+								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-pink-700 hover:border-pink-700 transition-all shadow-lg hover:shadow-xl"
+							>
+								<i class="fa-brands fa-angular"></i>
+							</li>
+						</ul>
+					</div>
+					<div
+						class="flex flex-col gap-2 md:flex-row flex-1 justify-end translate-y-3"
+					>
+						<button
+							class="bg-sky-600 text-slate-50 rounded-lg px-6 py-2 active:shadow-md hover:shadow-md hover:-translate-y-1 transition-all"
+						>
+							Download CV
+						</button>
+						<button
+							class="bg-slate-200 text-slate-900 border border-black rounded-lg px-6 py-2 active:shadow-md hover:shadow-md hover:-translate-y-1 transition-all"
+						>
+							Get in touch
+						</button>
+					</div>
+				</div>
 			</div>
 		</main>
 		<script src="index.js"></script>
