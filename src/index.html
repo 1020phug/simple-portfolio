@@ -12,14 +12,14 @@
 		<link rel="stylesheet" href="output.css" />
 		<title>My Portfolio || 1020phug</title>
 	</head>
-	<body class="min-h-full">
+	<body class="min-h-full relative bg-slate-50">
 		<header
-			class="max-w-full fixed top-0 left-0 right-0 py-2 px-8 bg-slate-800 text-slate-50 flex justify-between items-center"
+			class="max-w-full py-2 px-8 bg-slate-800 text-slate-50 flex justify-between items-center"
 		>
 			<div class="w-12 h-12">
-				<img src="assets/images/logo.png" alt="" class="w-full" />
+				<img src="assets/images/logo.jpg" alt="" class="w-full rounded-full" />
 			</div>
-			<h1 class="text-3xl font-bold max-sm:hidden">My Portfolio</h1>
+			<h1 class="text-3xl font-bold max-sm:hidden">1020phug</h1>
 			<nav>
 				<span class="cursor-pointer" hidden onclick="toggleMenu()"
 					><i class="fa-solid fa-bars"></i
@@ -58,73 +58,51 @@
 				</ul>
 			</nav>
 		</header>
-		<main id="hero" class="bg-slate-50 min-h-screen">
-			<div class="bg-slate-200">
-				<div class="max-w-7xl mx-auto h-64 mt-[4rem] md:px-8">
+
+		<main class="w-full h-full max-w-2xl lg:max-w-4xl mx-auto mt-24">
+			<div
+				class="flex flex-col space-y-10 justify-between items-center lg:flex-row-reverse lg:gap-10"
+			>
+				<div class="w-96 h-auto lg:w-full lg:h-96 rounded-full overflow-hidden">
 					<img
-						src="assets/images/cover.jpg"
+						src="assets/images/avatar.jpg"
 						alt=""
-						class="object-cover object-center h-full w-full"
+						class="w-full h-full object-cover"
 					/>
 				</div>
-				<div
-					class="max-w-7xl mx-auto px-16 flex flex-col items-center gap-6 lg:flex-row translate-y-[-15%]"
-				>
-					<img
-						src="assets/images/avt.jpg"
-						alt=""
-						class="border-4 border-spacing-2 border-slate-300 w-40 rounded-full"
-					/>
-					<div
-						class="flex flex-col gap-2 max-lg:items-center justify-center translate-y-4"
+				<div class="flex flex-col gap-10 justify-center items-center">
+					<h1 class="text-6xl lg:text-7xl">Bitter is Better</h1>
+					<p
+						class="w-1/2 lg:w-full text-sm lg:text-md text-slate-500 text-wrap leading-8"
 					>
-						<h1 class="text-3xl md:text-4xl">Phung Quang Anh</h1>
-						<p class="text-base opacity-70">Web Developer</p>
-						<ul class="flex gap-2">
-							<li
-								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-orange-600 hover:border-orange-600 transition-all"
-							>
-								<i class="fa-brands fa-html5"></i>
-							</li>
-							<li
-								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-blue-400 hover:border-blue-400 transition-all shadow-lg hover:shadow-xl"
-							>
-								<i class="fa-brands fa-css3-alt"></i>
-							</li>
-							<li
-								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-yellow-400 hover:border-yellow-400 transition-all shadow-lg hover:shadow-xl"
-							>
-								<i class="fa-brands fa-js"></i>
-							</li>
-							<li
-								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-sky-400 hover:border-sky-400 transition-all shadow-lg hover:shadow-xl"
-							>
-								<i class="fa-brands fa-react"></i>
-							</li>
-							<li
-								class="border border-slate-600 rounded-full w-8 h-8 flex justify-center items-center hover:text-pink-700 hover:border-pink-700 transition-all shadow-lg hover:shadow-xl"
-							>
-								<i class="fa-brands fa-angular"></i>
-							</li>
-						</ul>
-					</div>
+						Nếu phải lựa chọn nơi có thể xàm xí về cuộc sống, nhân sinh, triết
+						lý, đây có thể là phương án tồi nếu như bạn đang tìm kiếm một địa
+						điểm nơi mà quan điểm của bạn có giá trị 😎
+					</p>
 					<div
-						class="flex flex-col gap-2 md:flex-row flex-1 justify-end translate-y-3"
+						class="flex flex-col gap-2 w-1/2 justify-center lg:justify-start items-center md:w-full md:flex-row"
 					>
-						<button
-							class="bg-sky-600 text-slate-50 rounded-lg px-6 py-2 active:shadow-md hover:shadow-md hover:-translate-y-1 transition-all"
+						<a
+							href="https://drive.google.com/file/d/1b2a7q5tQk9eXjwCZ5u2gXt1YrHb0E7D1/view?usp=sharing"
+							target="_blank"
+							rel="noopener"
+							class="w-full md:w-fit py-2 px-6 bg-slate-800 text-slate-50 rounded-md shadow-md shadow-slate-500 hover:-translate-y-1 hover:shadow-sm hover:shadow-slate-300 transition-all duration-200 active:translate-y-1 active:shadow-md active:shadow-slate-500"
 						>
 							Download CV
-						</button>
-						<button
-							class="bg-slate-200 text-slate-900 border border-black rounded-lg px-6 py-2 active:shadow-md hover:shadow-md hover:-translate-y-1 transition-all"
+							<i class="ml-1 fa-solid fa-download"></i>
+						</a>
+						<a
+							href="#contact"
+							class="w-full md:w-fit py-2 px-6 bg-slate-50 text-slate-800 rounded-md hover:-translate-y-1 hover:shadow-sm hover:shadow-slate-300 transition-all duration-200 border border-slate-300 active:translate-y-1 active:shadow-sm active:shadow-slate-500"
 						>
-							Get in touch
-						</button>
+							Get in Touch
+							<i class="ml-1 fa-solid fa-paper-plane"></i>
+						</a>
 					</div>
 				</div>
 			</div>
 		</main>
+
 		<script src="index.js"></script>
 	</body>
 </html>
