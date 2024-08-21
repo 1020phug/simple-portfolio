@@ -1,19 +1,21 @@
 import { FaDownload, FaRegPaperPlane } from "react-icons/fa6";
+import DevCard from "../DevCard/DevCard";
 
 const Hero = () => {
 	return (
 		<div className="bg-slate-100">
 			<div className="w-full h-full max-w-2xl lg:max-w-4xl mx-auto py-20">
 				<div className="flex flex-col space-y-10 justify-between items-center lg:flex-row-reverse lg:gap-10">
-					<div className="w-48 h-auto sm:w-96 lg:w-full lg:h-96 rounded-full overflow-hidden">
-						<img
+					{/* <div className="w-48 h-auto sm:w-96 lg:w-full lg:h-96 rounded-full overflow-hidden"> */}
+					{/* <img
 							src="/src/assets/img/avatar.jpg"
 							alt=""
 							className="w-full h-full object-cover"
-						/>
-					</div>
+						/> */}
+					<DevCard />
+					{/* </div> */}
 					<div className="flex flex-col gap-10 justify-center items-center">
-						<h1 className="text-center text-6xl lg:text-7xl">
+						<h1 className="text-center text-6xl lg:text-7xl md:text-left md:text-nowrap">
 							Bitter is Better
 						</h1>
 						<p className="w-1/2 lg:w-full text-sm lg:text-md text-slate-500 text-wrap leading-8">
@@ -21,7 +23,7 @@ const Hero = () => {
 							lý, đây có thể là phương án tồi nếu như bạn đang tìm kiếm một địa
 							điểm nơi mà quan điểm của bạn có giá trị 😎
 						</p>
-						<div className="flex flex-col gap-2 w-1/2 justify-center lg:justify-start items-center md:w-full md:flex-row">
+						{/* <div className="flex flex-col gap-2 w-1/2 justify-center lg:justify-start items-center md:w-full md:flex-row">
 							<a
 								href="https://drive.google.com/file/d/1b2a7q5tQk9eXjwCZ5u2gXt1YrHb0E7D1/view?usp=sharing"
 								target="_blank"
@@ -38,7 +40,7 @@ const Hero = () => {
 								Get in Touch
 								<FaRegPaperPlane />
 							</a>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>
