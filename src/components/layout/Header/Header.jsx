@@ -2,7 +2,7 @@ import { FaBars, FaGithub, FaRegUser, FaDiagramProject } from "react-icons/fa6";
 
 const Header = () => {
 	return (
-		<header className="max-w-full py-2 px-8 bg-slate-800 text-slate-50 flex justify-between items-center">
+		<header className="fixed left-0 top-0 right-0 max-w-full py-2 px-8 bg-slate-800 text-slate-50 flex justify-between items-center">
 			<div className="w-12 h-12">
 				<img
 					src="/src/assets/img/avatar.jpg"

@@ -1,7 +1,7 @@
-import React from "react";
+import Tabs from "../PostList/PostList";
 
 const Footer = () => {
-	return <div>Footer</div>;
+	return <div></div>;
 };
 
 export default Footer;

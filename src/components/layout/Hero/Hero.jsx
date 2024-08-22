@@ -1,48 +1,59 @@
 import { FaDownload, FaRegPaperPlane } from "react-icons/fa6";
-import DevCard from "../DevCard/DevCard";
+
+const myInfo = {
+	Age: 24,
+	Occupation: "Frontend Developer",
+	Website: "https://1020phug.github.io/",
+	Country: "Vietnam",
+	Address: "FPT, Hanoi",
+	Phone: "+84 123 456 789",
+	Email: "PqKb2@example.com",
+};
+
+const info = Object.keys(myInfo).map((key) => {
+	return (
+		<li key={key}>
+			<span className="inline-block min-w-32 font-semibold">{key}</span>
+			<span>{myInfo[key]}</span>
+		</li>
+	);
+});
 
 const Hero = () => {
 	return (
-		<div className="bg-slate-100">
-			<div className="w-full h-full max-w-2xl lg:max-w-4xl mx-auto py-20">
-				<div className="flex flex-col space-y-10 justify-between items-center lg:flex-row-reverse lg:gap-10">
-					{/* <div className="w-48 h-auto sm:w-96 lg:w-full lg:h-96 rounded-full overflow-hidden"> */}
-					{/* <img
-							src="/src/assets/img/avatar.jpg"
-							alt=""
-							className="w-full h-full object-cover"
-						/> */}
-					<DevCard />
-					{/* </div> */}
-					<div className="flex flex-col gap-10 justify-center items-center">
-						<h1 className="text-center text-6xl lg:text-7xl md:text-left md:text-nowrap">
-							Bitter is Better
-						</h1>
-						<p className="w-1/2 lg:w-full text-sm lg:text-md text-slate-500 text-wrap leading-8">
-							Nếu phải lựa chọn nơi có thể xàm xí về cuộc sống, nhân sinh, triết
-							lý, đây có thể là phương án tồi nếu như bạn đang tìm kiếm một địa
-							điểm nơi mà quan điểm của bạn có giá trị 😎
-						</p>
-						{/* <div className="flex flex-col gap-2 w-1/2 justify-center lg:justify-start items-center md:w-full md:flex-row">
-							<a
-								href="https://drive.google.com/file/d/1b2a7q5tQk9eXjwCZ5u2gXt1YrHb0E7D1/view?usp=sharing"
-								target="_blank"
-								rel="noopener"
-								className="w-[150%] flex justify-center items-center gap-2 md:w-fit py-2 px-6 bg-slate-800 text-slate-50 rounded-md shadow-md shadow-slate-500 hover:-translate-y-1 hover:shadow-sm hover:shadow-slate-300 transition-all duration-200 active:translate-y-1 active:shadow-md active:shadow-slate-500"
-							>
-								Download CV
-								<FaDownload />
-							</a>
-							<a
-								href="#contact"
-								className="w-[150%] flex justify-center items-center gap-2 md:w-fit py-2 px-6 bg-slate-50 text-slate-800 rounded-md hover:-translate-y-1 hover:shadow-sm hover:shadow-slate-300 transition-all duration-200 border border-slate-300 active:translate-y-1 active:shadow-sm active:shadow-slate-500"
-							>
-								Get in Touch
-								<FaRegPaperPlane />
-							</a>
-						</div> */}
+		<div className="w-full h-full max-w-2xl lg:max-w-4xl mx-auto my-20 shadow-lg">
+			<div className="bg-slate-600 text-slate-50 flex flex-col items-center justify-center gap-6 md:flex-row p-8 rounded-t-xl">
+				<div className="md:-translate-x-24 md:translate-y-12 shadow-lg hover:translate-y-10 hover:shadow-2xl transition-all">
+					<img
+						src="./src/assets/img/avatar.jpg"
+						alt=""
+						className="w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 border border-slate-100"
+					/>
+				</div>
+				<div className="flex flex-col items-center justify-center space-y-4">
+					<h1 className="text-7xl font-bold">1020phug</h1>
+					<p className="text-slate-300">Frontend Developer</p>
+					<div className="flex justify-center items-center gap-2">
+						<button className="flex items-center bg-slate-50 text-slate-600 p-4 rounded-full">
+							<FaDownload />
+						</button>
+						<button className="flex items-center bg-slate-50 text-slate-600 p-4 rounded-full">
+							<FaRegPaperPlane />
+						</button>
 					</div>
 				</div>
+			</div>
+			<div className="bg-slate-50 text-slate-600 p-8 flex flex-col space-y-12 md:gap-10 md:flex-row">
+				<div className="flex flex-col md:max-w-[45%]">
+					<h1 className="text-3xl font-bold">
+						About <span className="text-lime-950">Me</span>
+					</h1>
+					<p className="mt-4">
+						I am a frontend developer with 2 years of experience. I have a
+						passion for creating beautiful and functional websites.
+					</p>
+				</div>
+				<ul className="flex flex-col gap-2">{info}</ul>
 			</div>
 		</div>
 	);
