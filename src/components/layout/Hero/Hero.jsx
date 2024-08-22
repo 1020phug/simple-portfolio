@@ -1,4 +1,11 @@
-import { FaDownload, FaRegPaperPlane } from "react-icons/fa6";
+import {
+	FaFacebookF,
+	FaInstagram,
+	FaLinkedinIn,
+	FaGithub,
+} from "react-icons/fa6";
+
+import Button from "../../Button/Button";
 
 const myInfo = {
 	Age: 24,
@@ -9,6 +16,25 @@ const myInfo = {
 	Phone: "+84 123 456 789",
 	Email: "PqKb2@example.com",
 };
+
+const socials = [
+	{
+		href: "https://facebook.com/1020phug",
+		icon: () => <FaFacebookF />,
+	},
+	{
+		href: "https://instagram.com/1020phug",
+		icon: () => <FaInstagram />,
+	},
+	{
+		href: "https://linkedin.com/in/1020phug",
+		icon: () => <FaLinkedinIn />,
+	},
+	{
+		href: "https://github.com/1020phug",
+		icon: () => <FaGithub />,
+	},
+];
 
 const info = Object.keys(myInfo).map((key) => {
 	return (
@@ -23,7 +49,7 @@ const Hero = () => {
 	return (
 		<div className="w-full h-full max-w-2xl lg:max-w-4xl mx-auto my-20 shadow-lg">
 			<div className="bg-slate-600 text-slate-50 flex flex-col items-center justify-center gap-6 md:flex-row p-8 rounded-t-xl">
-				<div className="md:-translate-x-24 md:translate-y-12 shadow-lg hover:translate-y-10 hover:shadow-2xl transition-all">
+				<div className="lg:-translate-x-24 lg:translate-y-12 shadow-lg lg:hover:translate-y-10 lg:hover:shadow-2xl transition-all">
 					<img
 						src="./src/assets/img/avatar.jpg"
 						alt=""
@@ -34,12 +60,26 @@ const Hero = () => {
 					<h1 className="text-7xl font-bold">1020phug</h1>
 					<p className="text-slate-300">Frontend Developer</p>
 					<div className="flex justify-center items-center gap-2">
-						<button className="flex items-center bg-slate-50 text-slate-600 p-4 rounded-full">
+						{/* <button className="flex items-center bg-slate-50 text-slate-600 p-4 rounded-full">
 							<FaDownload />
 						</button>
 						<button className="flex items-center bg-slate-50 text-slate-600 p-4 rounded-full">
 							<FaRegPaperPlane />
-						</button>
+						</button> */}
+						{socials.map((item, index) => {
+							const newIcon = item.icon;
+							return (
+								<Button
+									key={index}
+									href={item.href}
+									className={
+										"w-8 h-8 p-2 rounded-full bg-slate-50 text-slate-600 hover:text-slate-50 hover:bg-slate-600 transition-all"
+									}
+								>
+									{newIcon()}
+								</Button>
+							);
+						})}
 					</div>
 				</div>
 			</div>
