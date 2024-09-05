@@ -2,14 +2,15 @@
 
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+	darkMode: ["selector"],
 	theme: {
 		extend: {
 			colors: {
-				primary: "#18181b",
-				secondary: "#27272a",
-				accent: "#427eff",
-				neutral: "#9ec3ff",
-				bg: "#f4f4f5",
+				text: "var(--text)",
+				bg: "var(--background)",
+				primary: "var(--primary)",
+				secondary: "var(--secondary)",
+				accent: "var(--accent)",
 			},
 		},
 	},

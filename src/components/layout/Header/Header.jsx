@@ -1,7 +1,9 @@
 import { FaBars } from "react-icons/fa6";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Button from "../../Button/Button";
 import { Link } from "react-router-dom";
+import { CiLight, CiDark } from "react-icons/ci";
+import { ThemeContext } from "../../../context/ThemeContext";
 
 const menu = [
 	{ name: "Homepage", href: "/" },
@@ -11,12 +13,13 @@ const menu = [
 ];
 
 const Header = () => {
+	const { theme, toggleTheme } = useContext(ThemeContext);
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (
-		<header className="fixed bg left-0 top-0 right-0 max-w-screen-lg mx-auto py-2 px-8 text-slate-50 flex justify-between items-center">
+		<header className="fixed bg left-0 top-0 right-0 max-w-screen-lg mx-auto py-2 px-8 flex justify-between items-center">
 			<div className="w-12 h-12">
 				<img
 					src="/src/assets/img/avatar.jpg"
@@ -24,7 +27,10 @@ const Header = () => {
 					className="w-full rounded-full"
 				/>
 			</div>
-			<Link to={"/"} className="text-3xl font-bold max-sm:hidden">
+			<Link
+				to={"/"}
+				className="text-3xl from-primary to-accent bg-gradient-to-br bg-clip-text text-transparent font-bold max-sm:hidden"
+			>
 				1020phug
 			</Link>
 			<nav>
@@ -43,7 +49,7 @@ const Header = () => {
 						<li
 							key={item.name}
 							onClick={toggle}
-							className="relative cursor-pointer after:contents-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-1500 hover:after:w-full"
+							className="relative cursor-pointer after:contents-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-1500 hover:after:w-full"
 						>
 							<Button type="link" href={item.href}>
 								{item.name}
@@ -52,6 +58,9 @@ const Header = () => {
 					))}
 				</ul>
 			</nav>
+			<button className="w-12 h-12 text-text" onClick={toggleTheme}>
+				{theme == "light" ? <CiLight /> : <CiDark />}
+			</button>
 		</header>
 	);
 };

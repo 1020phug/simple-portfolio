@@ -49,14 +49,14 @@ const info = Object.keys(myInfo).map((key) => {
 
 const Hero = () => {
 	return (
-		<div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center lg:flex-row gap-16">
+		<div className="max-w-screen-lg min-h-full mx-auto flex flex-col items-center justify-center lg:flex-row gap-16">
 			<div className="flex-1 flex flex-col gap-y-4">
 				<h1 className="text-3xl md:text-5xl text-primary font-bold">
 					1020phug
 				</h1>
 				<h2 className="mb-4 max-w-lg">Frontend Developer</h2>
-				<div className="flex items-center">
-					<Button className="mr-4">
+				<div className="flex items-center space-x-4">
+					<Button>
 						<RiProfileFill />
 						<span className="ml-2">Resume</span>
 					</Button>
