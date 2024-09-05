@@ -16,7 +16,7 @@ const Header = () => {
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (
-		<header className="fixed left-0 top-0 right-0 max-w-full py-2 px-8 bg-slate-800 text-slate-50 flex justify-between items-center">
+		<header className="fixed bg left-0 top-0 right-0 max-w-screen-lg mx-auto py-2 px-8 text-slate-50 flex justify-between items-center">
 			<div className="w-12 h-12">
 				<img
 					src="/src/assets/img/avatar.jpg"
@@ -43,9 +43,11 @@ const Header = () => {
 						<li
 							key={item.name}
 							onClick={toggle}
-							className="hover:border-b-2 hover:border-b-white hover:opacity-65 transition-all"
+							className="relative cursor-pointer after:contents-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-1500 hover:after:w-full"
 						>
-							<Button href={item.href}>{item.name}</Button>
+							<Button type="link" href={item.href}>
+								{item.name}
+							</Button>
 						</li>
 					))}
 				</ul>

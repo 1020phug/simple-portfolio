@@ -8,3 +8,10 @@ body {
 	scroll-behavior: smooth;
 	scrollbar-width: none;
 }
+
+.bg {
+	background-color: theme("colors.bg");
+	color: theme("colors.accent");
+	box-shadow: 0 0 0 100vmax theme("colors.bg");
+	clip-path: inset(0 -100vmax);
+}
