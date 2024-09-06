@@ -58,7 +58,10 @@ const Header = () => {
 					))}
 				</ul>
 			</nav>
-			<button className="w-12 h-12 text-text" onClick={toggleTheme}>
+			<button
+				className="w-12 h-12 text-text border border-transparent flex justify-center items-center hover:-translate-y-1 active:translate-y-0.5 transition-all"
+				onClick={toggleTheme}
+			>
 				{theme == "light" ? <CiLight /> : <CiDark />}
 			</button>
 		</header>

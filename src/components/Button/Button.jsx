@@ -5,7 +5,7 @@ const Button = ({ className, href, type, children }) => {
 		return (
 			<Link
 				to={href || ""}
-				className={`flex justify-center items-center w-fit px-4 py-1 text-text cursor-pointer ${
+				className={`flex justify-center items-center w-fit px-4 py-1 text-sm text-text cursor-pointer ${
 					className || ""
 				}`}
 			>
@@ -16,7 +16,7 @@ const Button = ({ className, href, type, children }) => {
 	return (
 		<Link
 			to={href || ""}
-			className={`flex justify-center items-center w-fit px-4 py-1 text-text border cursor-pointer border- rounded-md${
+			className={`flex justify-center items-center w-fit px-4 py-1 text-text border cursor-pointer border-primary hover:border-accent hover:text-primary rounded-md ${
 				className || ""
 			}`}
 		>

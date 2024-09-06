@@ -51,12 +51,12 @@ const Hero = () => {
 	return (
 		<div className="max-w-screen-lg min-h-full mx-auto flex flex-col items-center justify-center lg:flex-row gap-16">
 			<div className="flex-1 flex flex-col gap-y-4">
-				<h1 className="text-3xl md:text-5xl text-primary font-bold">
-					1020phug
-				</h1>
-				<h2 className="mb-4 max-w-lg">Frontend Developer</h2>
+				<h1 className="text-3xl md:text-5xl text-text font-bold">1020phug</h1>
+				<h2 className="mb-4 max-w-lg text-text text-opacity-60">
+					Frontend Developer
+				</h2>
 				<div className="flex items-center space-x-4">
-					<Button>
+					<Button href="../../../files/CV/CV.pdf">
 						<RiProfileFill />
 						<span className="ml-2">Resume</span>
 					</Button>
@@ -66,7 +66,8 @@ const Hero = () => {
 							<a
 								href={social.href}
 								key={social.href}
-								className="text-lg text-primary hover:text-accent hover:-translate-y-2 transition-all"
+								className="text-lg text-text 
+								text-opacity-60 hover:text-accent hover:-translate-y-2 transition-all"
 							>
 								{social.icon()}
 							</a>
