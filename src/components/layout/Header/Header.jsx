@@ -51,9 +51,12 @@ const Header = () => {
 							onClick={toggle}
 							className="relative cursor-pointer after:contents-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-1500 hover:after:w-full"
 						>
-							<Button type="link" href={item.href}>
+							<Link
+								to={item.href}
+								className="hover:text-accent dark:text-accent dark:hover:text-primary transition-all"
+							>
 								{item.name}
-							</Button>
+							</Link>
 						</li>
 					))}
 				</ul>

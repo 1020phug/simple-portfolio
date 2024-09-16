@@ -1,28 +1,22 @@
-import { Link } from "react-router-dom";
+import { cva } from "class-variance-authority";
 
-const Button = ({ className, href, type, children }) => {
-	if (type === "link") {
-		return (
-			<Link
-				to={href || ""}
-				className={`flex justify-center items-center w-fit px-4 py-1 text-sm text-text cursor-pointer ${
-					className || ""
-				}`}
-			>
-				{children}
-			</Link>
-		);
-	}
-	return (
-		<Link
-			to={href || ""}
-			className={`flex justify-center items-center w-fit px-4 py-1 text-text border cursor-pointer border-primary hover:border-accent hover:text-primary rounded-md ${
-				className || ""
-			}`}
-		>
-			{children}
-		</Link>
-	);
+const Button = ({ variant, ...props }) => {
+	return <button {...props} className={ButtonCVA({ variant })} />;
 };
+
+const ButtonCVA = cva(
+	"flex justify-center items-center gap-2 py-2 px-4 rounded",
+	{
+		variants: {
+			variant: {
+				primary: "bg-primary hover:bg-primary/80 text-white",
+				secondary: "bg-secondary hover:bg-secondary/80 text-white",
+			},
+		},
+		defaultVariants: {
+			variant: "primary",
+		},
+	}
+);
 
 export default Button;
