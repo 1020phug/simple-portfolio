@@ -1,6 +1,5 @@
 import { FaBars } from "react-icons/fa6";
 import { useContext, useState } from "react";
-import Button from "../../Button/Button";
 import { Link } from "react-router-dom";
 import { CiLight, CiDark } from "react-icons/ci";
 import { ThemeContext } from "../../../context/ThemeContext";
@@ -19,7 +18,7 @@ const Header = () => {
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (
-		<header className="fixed bg left-0 top-0 right-0 max-w-screen-lg mx-auto py-2 px-8 flex justify-between items-center">
+		<header className="fixed left-0 top-0 max-w-screen-md right-0 mx-auto py-2 px-8 flex justify-between items-center">
 			<div className="w-12 h-12">
 				<img
 					src="/src/assets/img/avatar.jpg"
