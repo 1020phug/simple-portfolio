@@ -27,7 +27,12 @@ body {
 }
 
 .bg {
-	/* background-color: theme("colors.bg"); */
-	box-shadow: 0 0 0 100vmax theme("colors.bg");
+	background: var(--background);
+	box-shadow: 0 0 0 100vmax var(--background);
+	clip-path: inset(0 -100vmax);
+}
+.bg-sub {
+	background: var(--secondary);
+	box-shadow: 0 0 0 100vmax var(--secondary);
 	clip-path: inset(0 -100vmax);
 }

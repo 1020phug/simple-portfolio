@@ -5,7 +5,7 @@ const Button = ({ variant, ...props }) => {
 };
 
 const ButtonCVA = cva(
-	"flex justify-center items-center gap-2 py-2 px-4 rounded",
+	"flex justify-center items-center gap-2 py-2 px-4 rounded hover:scale-105 transition-all",
 	{
 		variants: {
 			variant: {
