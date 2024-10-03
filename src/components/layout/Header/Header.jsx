@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
 import cn from "../../../ultis/cn";
+import Logo from "../../Logo/Logo";
 
 const Header = () => {
 	const { theme, toggleTheme } = useContext(ThemeContext);
@@ -8,21 +9,12 @@ const Header = () => {
 	return (
 		<header className="text-text container md:pt-4 max-w-screen-lg m-auto md:px-12 lg:px-20 bg-sub h-12 flex items-center">
 			<nav
-				className="hidden md:flex justify-start items-center h-full mt-auto space-x-6 text-sm lg:justify-start backdrop-filter backdrop-blur-sm bg-opacity-30"
+				className="hidden w-full md:flex justify-start items-center h-full mt-auto space-x-6 text-sm lg:justify-start backdrop-filter backdrop-blur-sm bg-opacity-30"
 				aria-label="Main Navigation"
 			>
-				<a
-					aria-label="Website logo, go back to homepage."
-					className="flex items-center border-white group focus-visible:outline-accent"
-					href="/"
-				>
-					<div className="overflow-hidden transition ease-in-out rounded-full  hover:opacity-60">
-						<span className="text-sm">1020phug</span>
-						<span className="text-sm text-primary">.dev</span>
-					</div>
-				</a>
+				<Logo size="small" />
 
-				<div className="md:flex flex-grow items-center justify-start space-x-6">
+				<div className="hidden md:flex flex-grow items-center justify-start space-x-6">
 					<a
 						href="/"
 						className="text-text font-bold tracking-wide transition-colors"
@@ -48,7 +40,7 @@ const Header = () => {
 						Contact
 					</a>
 				</div>
-				<div className="flex justify-between">
+				<div className="flex-1 ml-auto flex justify-end">
 					<button
 						className={cn("block h-4 w-4 rounded-full", {
 							"bg-black": theme === "light",
