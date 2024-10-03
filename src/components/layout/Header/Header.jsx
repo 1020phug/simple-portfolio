@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
 import cn from "../../../ultis/cn";
 import Logo from "../../Logo/Logo";
+import Links from "../../Links/Links";
 
 const Header = () => {
 	const { theme, toggleTheme } = useContext(ThemeContext);
@@ -15,30 +16,12 @@ const Header = () => {
 				<Logo size="small" />
 
 				<div className="hidden md:flex flex-grow items-center justify-start space-x-6">
-					<a
-						href="/"
-						className="text-text font-bold tracking-wide transition-colors"
-					>
+					<Links variant="active" href="/">
 						Home
-					</a>
-					<a
-						href="/"
-						className="text-text text-opacity-50 tracking-wide transition-colors"
-					>
-						About
-					</a>
-					<a
-						href="/"
-						className="text-text text-opacity-50 tracking-wide transition-colors"
-					>
-						Projects
-					</a>
-					<a
-						href="/"
-						className="text-text text-opacity-50 tracking-wide transition-colors"
-					>
-						Contact
-					</a>
+					</Links>
+					<Links href="/about">About</Links>
+					<Links href="/projects">Projects</Links>
+					<Links href="/contact">Contact</Links>
 				</div>
 				<div className="flex-1 ml-auto flex justify-end">
 					<button
