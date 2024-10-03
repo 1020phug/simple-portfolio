@@ -7,10 +7,11 @@ import Links from "../../Links/Links";
 const Header = () => {
 	const { theme, toggleTheme } = useContext(ThemeContext);
 	const [open, setOpen] = useState(false);
+
 	return (
-		<header className="text-text container md:pt-4 max-w-screen-lg m-auto md:px-12 lg:px-20 bg-sub h-12 flex items-center">
+		<header className="text-text container md:pt-4 max-w-screen-lg m-auto md:px-12 lg:px-20">
 			<nav
-				className="hidden w-full md:flex justify-start items-center h-full mt-auto space-x-6 text-sm lg:justify-start backdrop-filter backdrop-blur-sm bg-opacity-30"
+				className="hidden relative w-full md:flex justify-start items-center h-full mt-auto space-x-6 text-sm lg:justify-start backdrop-filter backdrop-blur-sm bg-opacity-30 "
 				aria-label="Main Navigation"
 			>
 				<Logo size="small" />
@@ -33,7 +34,7 @@ const Header = () => {
 					></button>
 				</div>
 			</nav>
-			<nav className="fixed top-0 h-12 w-full md:hidden bg-secondary backdrop-filter backdrop-blur-sm bg-opacity-30 z-50">
+			<nav className="fixed top-0 h-12 w-full md:hidden backdrop-filter backdrop-blur-sm bg-opacity-30 z-50 bg-secondary">
 				<button
 					className="absolute top-3 right-2 z-50"
 					aria-label="Open Menu"
@@ -73,49 +74,53 @@ const Header = () => {
 						</svg>
 					)}
 				</button>
-				<div
-					className={`flex flex-col h-screen w-full bg-secondary overflow-hidden px-4 pt-16 mb-12 ${
-						open ? "block" : "hidden"
-					}`}
-				>
-					<ul className="flex flex-col gap-y-12">
-						<li className="border-b border-b-accent border-opacity-30 pb-2">
-							Home
-						</li>
-						<li className="border-b border-b-accent border-opacity-30 pb-2">
-							About
-						</li>
-						<li className="border-b border-b-accent border-opacity-30 pb-2">
-							Projects
-						</li>
-						<li className="border-b border-b-accent border-opacity-30 pb-2">
-							Contact
-						</li>
-					</ul>
-					<div className="flex justify-between mt-12">
-						<button
-							className={cn("block h-4 w-4 rounded-full", {
-								"bg-black": theme === "light",
-								"bg-white": theme === "dark",
-							})}
-							onClick={toggleTheme}
-						></button>
+				{open && <Menu theme={theme} toggleTheme={toggleTheme} />}
+				{!open && (
+					<div className="absolute top-3 left-2 block">
+						<a
+							aria-label="Website logo, go back to homepage."
+							className="flex items-center border-white group focus-visible:outline-accent"
+							href="/"
+						>
+							<div className="overflow-hidden transition ease-in-out rounded-full  hover:opacity-60">
+								<span className="text-sm">1020phug</span>
+								<span className="text-sm text-primary">.dev</span>
+							</div>
+						</a>
 					</div>
-				</div>
-				<div className={`absolute top-3 left-2 ${open ? "hidden" : "block"}`}>
-					<a
-						aria-label="Website logo, go back to homepage."
-						className="flex items-center border-white group focus-visible:outline-accent"
-						href="/"
-					>
-						<div className="overflow-hidden transition ease-in-out rounded-full  hover:opacity-60">
-							<span className="text-sm">1020phug</span>
-							<span className="text-sm text-primary">.dev</span>
-						</div>
-					</a>
-				</div>
+				)}
 			</nav>
 		</header>
+	);
+};
+
+const Menu = ({ theme, toggleTheme }) => {
+	return (
+		<div className="flex flex-col z-40 h-screen w-full bg-secondary overflow-hidden px-4 pt-16 mb-12">
+			<ul className="flex flex-col gap-y-12">
+				<li className="border-b border-b-accent border-opacity-30 pb-2">
+					Home
+				</li>
+				<li className="border-b border-b-accent border-opacity-30 pb-2">
+					About
+				</li>
+				<li className="border-b border-b-accent border-opacity-30 pb-2">
+					Projects
+				</li>
+				<li className="border-b border-b-accent border-opacity-30 pb-2">
+					Contact
+				</li>
+			</ul>
+			<div className="flex justify-between mt-12">
+				<button
+					className={cn("block h-4 w-4 rounded-full", {
+						"bg-black": theme === "light",
+						"bg-white": theme === "dark",
+					})}
+					onClick={toggleTheme}
+				></button>
+			</div>
+		</div>
 	);
 };
 

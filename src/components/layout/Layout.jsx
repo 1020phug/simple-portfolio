@@ -4,11 +4,11 @@ import Footer from "./Footer/Footer";
 
 const Layout = ({ children }) => {
 	return (
-		<>
+		<main className="min-h-screen">
 			<Header />
 			<MainContent>{children}</MainContent>
 			<Footer />
-		</>
+		</main>
 	);
 };
 
