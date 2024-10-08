@@ -8,7 +8,7 @@ const Links = ({ variant, href, children, ...props }) => {
 	);
 };
 
-const LinksCVA = cva("text-text tracking-wide transition-colors", {
+const LinksCVA = cva("tracking-wide flex items-center gap-2", {
 	variants: {
 		variant: {
 			active: "font-bold",
@@ -16,7 +16,7 @@ const LinksCVA = cva("text-text tracking-wide transition-colors", {
 		},
 	},
 	defaultVariants: {
-		variant: "primary",
+		variant: "original",
 	},
 });
 
