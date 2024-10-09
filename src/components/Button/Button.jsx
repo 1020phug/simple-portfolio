@@ -11,7 +11,7 @@ const ButtonCVA = cva(
 			variant: {
 				primary: "bg-primary hover:bg-primary/80 text-white",
 				secondary: "bg-secondary hover:bg-secondary/80 text-white",
-				outline: "bg-transparent border border-accent hover:text-accent",
+				outline: "bg-transparent border-2 border-accent hover:text-accent",
 			},
 		},
 		defaultVariants: {
